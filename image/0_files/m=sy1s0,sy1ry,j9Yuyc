@@ -1,0 +1,21 @@
+this._s=this._s||{};(function(_){var window=this;
+try{
+_.vDd=function(a){this.Ga=_.r(a)};_.G(_.vDd,_.t);_.k=_.vDd.prototype;_.k.Wr=function(){_.th(this);return _.Uh(this,1)};_.k.A0e=function(){return _.Uh(this,1)};_.k.w0e=function(){return _.Ch(this,2)};_.k.v0e=function(){return _.zi(this,2)};_.k.y0e=function(){return _.Ch(this,3)};_.k.x0e=function(){return _.zi(this,3)};_.k.r0e=function(){return _.Ch(this,4)};_.k.t0e=function(){return _.Ch(this,5)};_.k.s0e=function(){return _.Ch(this,6)};_.k.u0e=function(){return _.Ch(this,7)};
+_.k.z0e=function(){return _.Ch(this,8)};_.k.setSpeed=function(a){return _.$i(this,8,a)};
+}catch(e){_._DumpException(e)}
+try{
+_.lf(_.MYa);
+}catch(e){_._DumpException(e)}
+try{
+_.y("j9Yuyc");
+var MDd=function(a,b){switch(a.code){case 1:var c="permission_denied";break;case 2:c="location_unavailable";break;case 3:c="location_timeout";break;default:c="unknown_error"}a=new _.md(c,a.message);_.tg({serviceName:"g",methodName:b},a);return a},NDd=function(){var a=new _.md("feature_not_enabled","HTML5 geolocation permissions API missing.");_.tg({serviceName:"g",methodName:"getGeolocationPermissionState"},a);return a},ODd=function(a){var b=new _.md("feature_not_enabled","HTML5 geolocation API missing.");
+_.tg({serviceName:"g",methodName:a},b);return b},PDd=function(a){var b,c;return _.Pg(function(d){b=new _.wDd;switch(a.state){case "granted":return _.ej(b,4,1),d.return(b);case "denied":return _.ej(b,4,2),d.return(b);case "prompt":return _.ej(b,4,3),d.return(b);default:return c=new _.md("unknown_error","Invalid permission state '"+a.state+"'."),_.tg({serviceName:"g",methodName:"getGeolocationPermissionState"},c),d.return(Promise.reject(c))}})};var QDd=function(a){_.Vn.call(this,a.Ma)};_.G(QDd,_.Vn);QDd.kb=_.Vn.kb;QDd.Ha=_.Vn.Ha;_.k=QDd.prototype;_.k.isAvailable=function(){return!(!navigator||!navigator.geolocation)};_.k.tya=function(){return!0};_.k.uya=function(){var a,b;return!!((a=navigator)==null?0:(b=a.permissions)==null?0:b.query)};
+_.k.getCurrentLocation=function(){_.rg({serviceName:"g",methodName:"gcl"});return this.isAvailable()?new Promise(function(a,b){navigator.geolocation.getCurrentPosition(a,function(c){b(MDd(c,"gcl"))})}):Promise.reject(ODd("gcl"))};
+_.k.M8a=function(){var a=this;return _.Pg(function(b){_.rg({serviceName:"g",methodName:"getCurrentLocationWithOptions"});return a.isAvailable()&&a.tya()?b.return(new Promise(function(c,d){navigator.geolocation.getCurrentPosition(function(e){if(e.timestamp==null||e.coords==null)var f=null;else{f=new _.vDd;f=_.Nf(f,1,e.timestamp);e=e.coords;var g=_.$i(f,2,e.latitude);g=_.$i(g,3,e.longitude);_.$i(g,4,e.accuracy);e.altitude!=null&&_.$i(f,5,e.altitude);e.altitudeAccuracy!=null&&_.$i(f,6,e.altitudeAccuracy);
+e.speed!=null&&f.setSpeed(e.speed);e.heading!=null&&_.$i(f,7,e.heading)}f?c(f):(f=new _.md("unknown_error","Could not get geolocation information"),_.tg({serviceName:"g",methodName:"getCurrentLocationWithOptions"},f),d(f))},function(e){d(MDd(e,"getCurrentLocationWithOptions"))})})):b.return(Promise.reject(ODd("getCurrentLocationWithOptions")))})};
+_.k.Z8a=function(){var a=this,b,c;return _.Pg(function(d){if(d.oa==1){_.rg({serviceName:"g",methodName:"getGeolocationPermissionState"});if(!a.isAvailable()||!a.uya())return d.return(Promise.reject(NDd()));_.Eg(d,2);return d.yield(navigator.permissions.query({name:"geolocation"}),4)}if(d.oa!=2)return b=d.Aa,d.return(PDd(b));c=_.Kg(d);if(c instanceof TypeError)d=d.return(Promise.reject(NDd()));else{var e=d.return,f=Promise,g=f.reject,h=new _.md("unknown_error",(c==null?void 0:c.message)||"Could not get geolocation permission information.");
+_.tg({serviceName:"g",methodName:"getGeolocationPermissionState"},h);d=e.call(d,g.call(f,h))}return d})};_.Xn(_.f7a,QDd);
+_.z();
+}catch(e){_._DumpException(e)}
+})(this._s);
+// Google Inc.
