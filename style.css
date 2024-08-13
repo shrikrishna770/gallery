@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: aqua;
+
+    .logo{
+        width: 23vh;
+        height: 23vh;
+        margin-top:.5%;
+        background-image: url(download.png);
+        background-position: center;
+        background-size: cover;
+            border-radius: 50%;
+    }
+
+    .mainchild{
+        height: 70vh;
+        position: relative;
+        box-sizing: border-box;
+        width: 94vw;
+        overflow:auto;
+        background-color: rgb(26, 24, 24);
+
+        .index{
+            border: 1px solid red;
+            background-color: black;
+            padding: 10px;
+            position: sticky;
+            top:0;
+            
+             
+            a{
+                padding-left: 15px;
+                font-size: large;
+                color: aliceblue;
+            }
+        }
+
+        h2{
+            margin: 5px;
+            color: white;
+    }   
+    }
+}
+
+.mainchild{
+    display: none;
+}
+
+
+.main .active{
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+    animation: scale 0.5s linear;
+  }
