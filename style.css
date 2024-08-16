@@ -4,14 +4,13 @@
 }
 
 .main {
-    /* width: 100; */
+    max-width: 2000PX;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* background-color: aqua; */
-    background-image: url(navgurukul.jpg);
+    background-image: url(image/4.jpg);
     background-size: cover;
 
     p {
@@ -22,6 +21,7 @@
         margin: 8px 0px 8px 0px;
         border-radius: 10px;
         padding: 5px;
+        text-align: center;
     }
 
     .logo {
@@ -29,7 +29,7 @@
         width: 23vh;
         height: 23vh;
         /* margin-top:.5%; */
-        background-image: url(download.png);
+        background-image: url(image/download.png);
         background-position: center;
         background-size: cover;
         border-radius: 50%;
@@ -60,11 +60,15 @@
 
         .photo {
             padding: 5px;
-
-            img {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            img{
                 width: 280px;
                 height: 280px;
             }
+
             img:hover{
                 scale: 1.05;
             }
